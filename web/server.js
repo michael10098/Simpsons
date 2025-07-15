@@ -18,34 +18,16 @@ app.prepare().then(() => {
    dataReturned: "Waiting"
  };
  
- server.get('/products', (req, res) => {
-  return app.render(req, res, '/products')
- })
-
  server.get('/predictions', (req, res) => {
   return app.render(req, res, '/predictions')
  })
-
- server.get('/testing', (req, res) => {
-  return app.render(req, res, '/testing')
- })
-
-server.get('/api/products', (req, res) => {
-  const products = [
-   { id: 1, name: 'Product 1' },
-   { id: 2, name: 'Product 2' },
-   { id: 3, name: 'Product 3' },
-  ];
- 
-  res.status(200).json({ products });
- });
 
 server.use(express.text());
 
 server.post('/api/predictions', (req, res) => {
   data = req.body;
-  fetch('http://python:5000/predict', {
-  //fetch('http://localhost:5000/predict', {
+  //fetch('http://python:5000/predict', {
+  fetch('http://localhost:5000/predict', {
     method: 'POST',
     headers: {
       'Content-Type': 'text/plain',
