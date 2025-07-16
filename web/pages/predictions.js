@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 function PredictionsPage() {
   const [predictString, setPredictString] = useState("");
   const [predicted, setPredicted] = useState("");
-  const [probabilities, setProbabilities] = useState([])
-  const firstPrediction = "Where's Lisa."
+  const [probabilities, setProbabilities] = useState([]);
+  const [imagePath, setImagePath] = useState("/images/MargeSimpson");
+  const firstPrediction = "Where's Lisa.";
 
   async function fetchPredictions() {
     let predictElement = document.getElementById("predictString")
@@ -48,7 +49,7 @@ function PredictionsPage() {
           <button onClick={fetchPredictions}>Search</button>
           <p>Predict String: {predictString}</p>
           <p>Predicted: {predicted}</p>
-          <img src="./CharacterImages/BartSimpson.png"></img>
+          <img src={imagePath} height="100"></img>
           <p>Probabilities: </p>
           <ul>
             {probabilities.map((probability) => (

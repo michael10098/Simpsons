@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+const path = require('path');
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -20,6 +21,31 @@ app.prepare().then(() => {
  
  server.get('/predictions', (req, res) => {
   return app.render(req, res, '/predictions')
+ })
+
+ server.get('/images/BartSimpson', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'BartSimpson.png'));
+ })
+ server.get('/images/GrampaSimpson', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'GrampaSimpson.png'));
+ })
+ server.get('/images/HomerSimpson', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'HomerSimpson.png'));
+ })
+ server.get('/images/LisaSimpson', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'LisaSimpson.png'));
+ })
+ server.get('/images/MargeSimpson', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'MargeSimpson.png'));
+ })
+ server.get('/images/MilhouseVanHouten', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'MilhouseVanHouten.png'));
+ })
+ server.get('/images/NedFlanders', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'NedFlanders.png'));
+ })
+ server.get('/images/NelsonMuntz', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'NelsonMuntz.png'));
  })
 
 server.use(express.text());
