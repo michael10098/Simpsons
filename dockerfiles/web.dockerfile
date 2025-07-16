@@ -11,10 +11,10 @@ COPY ./web/package*.json ./
 RUN npm install
 
 # Copy the rest of your application files
-COPY . .
+COPY ./web .
  
 # Expose the port your app runs on
 EXPOSE 3000
  
 # Define the command to run your app
-CMD ["npm", "start"]
+CMD ["node", "server.js"]

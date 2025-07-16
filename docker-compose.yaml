@@ -9,6 +9,7 @@ services:
     volumes:
       - ./python:/app
   web:
+    container_name: web
     build:
       context: .
       dockerfile: dockerfiles/web.dockerfile
@@ -21,6 +22,5 @@ services:
       NODE_ENV: development
     stdin_open: true
     tty: true
-    command: node server.js
     depends_on:
       - python
