@@ -1,13 +1,4 @@
 services:
-  python:
-    container_name: python
-    build:
-      context: .
-      dockerfile: dockerfiles/python.dockerfile
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./python:/app
   web:
     container_name: web
     build:
@@ -15,6 +6,7 @@ services:
       dockerfile: dockerfiles/web.dockerfile
     ports:
       - "3000:3000"
+      - "5000:5000"
     volumes:
      - ./web:/app
      - ./web/node_modules:/app/node_modules
@@ -22,5 +14,3 @@ services:
       NODE_ENV: development
     stdin_open: true
     tty: true
-    depends_on:
-      - python

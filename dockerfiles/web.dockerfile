@@ -1,5 +1,5 @@
 # Use the latest LTS version of Node.js
-FROM node:24
+FROM node:24-slim
  
 # Set the working directory inside the container
 WORKDIR /app
