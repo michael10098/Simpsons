@@ -26,8 +26,8 @@ server.use(express.text());
 
 server.post('/api/predictions', (req, res) => {
   data = req.body;
-   fetch('http://python:5000/predict', {
-   //fetch('http://localhost:5000/predict', {
+   //fetch('http://python:5000/predict', {
+   fetch('http://127.0.0.1:5000/predict', {
     method: 'POST',
     headers: {
       'Content-Type': 'text/plain',
