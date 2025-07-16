@@ -48,6 +48,7 @@ function PredictionsPage() {
           <button onClick={fetchPredictions}>Search</button>
           <p>Predict String: {predictString}</p>
           <p>Predicted: {predicted}</p>
+          <img src="./CharacterImages/BartSimpson.png"></img>
           <p>Probabilities: </p>
           <ul>
             {probabilities.map((probability) => (
