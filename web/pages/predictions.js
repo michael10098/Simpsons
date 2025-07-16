@@ -34,9 +34,16 @@ function PredictionsPage() {
 
   return (
       <div>
-      <h1>Predictions</h1>
+      <h1>Simpsons Who Said That!</h1>
         <ul>
-          <label>Enter a quote that one of the characters in the may have said:</label><br></br>
+          <label>This is a NLP BERT model that can predict which character of the Simpsons possibly said a quote.  
+            This model has been trained on about 150,000 lines of script from each character.
+            There are about 6500 different characters in the script.  
+            However, to simplify things, 
+            only the most popular characters have been trained on this model.</label>
+            <br/>
+            <br/>
+          <label>Please enter a quote that one of the characters in the may have said and hit the search button:</label><br></br>
           <input type="search" id="predictString" />
           <button onClick={fetchPredictions}>Search</button>
           <p>Predict String: {predictString}</p>
