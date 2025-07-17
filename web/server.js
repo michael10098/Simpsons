@@ -47,6 +47,9 @@ app.prepare().then(() => {
  server.get('/images/NelsonMuntz', (req, res) => {
   res.sendFile(path.join(__dirname, 'images', 'NelsonMuntz.png'));
  })
+ server.get('/images/GroundskeeperWillie', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'GroundskeeperWillie.png'));
+ })
 
 server.use(express.text());
 

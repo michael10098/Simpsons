@@ -19,11 +19,23 @@ function PredictionsPage() {
     })
     .then((response) => response.text())
     .then((data) => {
-      data = data.split(",");
-      setPredictString(data[0].replace("Predict string: ", ""));
-      setPredicted(data[1].replace("Predicted: ['", "").replace("']", ""));
-      let probabilityString = data[2].replace("Probability\n", "");
-      let probabilityArray = probabilityString.split("\n");
+      data = data.split("\n");
+      let data2 = data[0].replace("Predict string: ", "");
+      data2 = data2.substring(0, data2.indexOf(",Predicted: ['"));
+      setPredictString(data2);
+      let data3 = data[0].substring(data[0].indexOf(",Predicted: ['") + 14, data[0].indexOf("']"));
+      let pred = data3;
+      setPredicted(pred);
+      if (pred == "Bart Simpson") setImagePath("/images/BartSimpson")
+        else if (pred == "Grampa Simpson") setImagePath("/images/GrampaSimpson")
+        else if (pred == "Homer Simpson") setImagePath("/images/HomerSimpson")
+        else if (pred == "Lisa Simpson") setImagePath("/images/LisaSimpson")
+        else if (pred == "Marge Simpson") setImagePath("/images/MargeSimpson")
+        else if (pred == "Milhouse Van Houten") setImagePath("/images/MilhouseVanHouten")
+        else if (pred == "Ned Flanders") setImagePath("/images/NedFlanders")
+        else if (pred == "Nelson Muntz") setImagePath("/images/NelsonMuntz")
+        else if (pred == "Groundskeeper Willie") setImagePath("/images/GroundskeeperWillie")
+      let probabilityArray = data.slice(1);
       setProbabilities(probabilityArray);
     })
   }
@@ -41,7 +53,8 @@ function PredictionsPage() {
             This model has been trained on about 150,000 lines of script from each character.
             There are about 6500 different characters in the script.  
             However, to simplify things, 
-            only the most popular characters have been trained on this model.</label>
+            only the most popular characters have been trained on this model.
+            Go to: <a href="https://planetclaire.tv/quotes/simpsons/">https://planetclaire.tv/quotes/simpsons/</a> to get quotes from Simpsons shows"</label>
             <br/>
             <br/>
           <label>Please enter a quote that one of the characters in the may have said and hit the search button:</label><br></br>
