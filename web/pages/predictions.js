@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Menu } from "../components/Menu.js"
 
 function PredictionsPage() {
   const [predictString, setPredictString] = useState("");
@@ -47,6 +48,7 @@ function PredictionsPage() {
 
   return (
       <div>
+      <Menu/>
       <h1>Simpsons Who Said That!</h1>
         <ul>
           <label>This is a NLP BERT model that can predict which character of the Simpsons possibly said a quote.  
@@ -58,8 +60,8 @@ function PredictionsPage() {
             <br/>
             <br/>
           <label>Please enter a quote that one of the characters in the may have said and hit the search button:</label><br></br>
-          <input type="search" id="predictString" />
-          <button onClick={fetchPredictions}>Search</button>
+          <textarea cols="40" rows="5" id="predictString"></textarea><br/>
+          <input type="submit" onClick={fetchPredictions}></input>
           <p>Predict String: {predictString}</p>
           <p>Predicted: {predicted}</p>
           <img src={imagePath} height="100"></img>
