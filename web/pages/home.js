@@ -28,12 +28,12 @@ function HomePage() {
     React.js was used to design this website.  I had serve a backend to this website 
     using Express.js.  This website is running in the cloud using AWS Web Services on 
     an EC2 machine.  I had to containerize this into a docker container.  When the 
-    container starts up, it first runs a small linux system that has NodeJS on it.  Then 
+    container starts up, it first runs a small linux system that has Node.js on it.  Then 
     it starts a Python scrpt that loads the model and all of the text transformers and the BERT model.  
     The python script waits on a web socket for requests from the React.js web server application.  
     When someone submits a text script, the React.js web server sends a POST TCP command to the Python script.  
     This is done internally in the Docker container.  I did it this way to avoid having two Docker containers and 
-    to avoid CORS rejects over the network (one for python and another for NodeJS).  Essentially the React.js web server acts as its own 
+    to avoid CORS rejects over the network (one for python and another for Node.js).  Essentially the React.js web server acts as its own 
     front end and has a back end that send a request to the Python script.
    </p>
   </div>

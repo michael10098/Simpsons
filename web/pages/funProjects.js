@@ -60,7 +60,7 @@ function FunProjectsPage() {
             Go to: <a href="https://planetclaire.tv/quotes/simpsons/">https://planetclaire.tv/quotes/simpsons/</a> to get quotes from Simpsons shows"</label>
             <br/>
             <br/>
-          <label>Please enter a quote that one of the characters in the may have said and hit the search button:</label><br></br>
+          <label>Please enter a quote that one of the characters may have said and hit the search button:</label><br></br>
           <textarea cols="40" rows="5" id="predictString"></textarea><br/>
           <input type="submit" onClick={fetchPredictions}></input>
           <p>Predict String: {predictString}</p>
