@@ -19,8 +19,20 @@ app.prepare().then(() => {
    dataReturned: "Waiting"
  };
  
- server.get('/predictions', (req, res) => {
-  return app.render(req, res, '/predictions')
+ server.get('/funProjects', (req, res) => {
+  return app.render(req, res, '/funProjects')
+ })
+
+ server.get('/resume', (req, res) => {
+  return app.render(req, res, '/resume')
+ })
+
+ server.get('/resumepdf', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Resume.pdf'));
+ })
+
+ server.get("/leverage", (req, res) => {
+  return app.render(req, res, '/leverage')
  })
 
  server.get('/images/BartSimpson', (req, res) => {

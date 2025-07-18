@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu } from "../components/Menu.js"
 
-function PredictionsPage() {
+function FunProjectsPage() {
   const [predictString, setPredictString] = useState("");
   const [predicted, setPredicted] = useState("");
   const [probabilities, setProbabilities] = useState([]);
@@ -20,11 +20,10 @@ function PredictionsPage() {
     })
     .then((response) => response.text())
     .then((data) => {
-      data = data.split("\n");
-      let data2 = data[0].replace("Predict string: ", "");
+      let data2 = data.replace("Predict string: ", "");
       data2 = data2.substring(0, data2.indexOf(",Predicted: ['"));
       setPredictString(data2);
-      let data3 = data[0].substring(data[0].indexOf(",Predicted: ['") + 14, data[0].indexOf("']"));
+      let data3 = data.substring(data.indexOf(",Predicted: ['") + 14, data.indexOf("']"));
       let pred = data3;
       setPredicted(pred);
       if (pred == "Bart Simpson") setImagePath("/images/BartSimpson")
@@ -36,7 +35,9 @@ function PredictionsPage() {
         else if (pred == "Ned Flanders") setImagePath("/images/NedFlanders")
         else if (pred == "Nelson Muntz") setImagePath("/images/NelsonMuntz")
         else if (pred == "Groundskeeper Willie") setImagePath("/images/GroundskeeperWillie")
-      let probabilityArray = data.slice(1);
+      let data4 = data.substring(data.indexOf("']") + 2, data.length - 1);
+      data4 = data4.split('\n');
+      let probabilityArray = data4.slice(1);
       setProbabilities(probabilityArray);
     })
   }
@@ -78,4 +79,4 @@ function PredictionsPage() {
   );
 }
 
-export default PredictionsPage;
+export default FunProjectsPage;
