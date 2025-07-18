@@ -63,6 +63,55 @@ app.prepare().then(() => {
   res.sendFile(path.join(__dirname, 'images', 'GroundskeeperWillie.png'));
  })
 
+server.get('/images/alarmLive', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'alarm live.png'));
+ })
+server.get('/images/alertApplied', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'alertapplied_user.png'));
+ })
+server.get('/images/buildingMapMoveCamera', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'building-map-move-camera-1.png'));
+ })
+server.get('/images/joystickCameraView', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'joystickcameraview.png'));
+ })
+server.get('/images/multiAlarmMap', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'multi-alarm-map.png'));
+ })
+server.get('/images/networkNodeIcons', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'networknode-icons.png'));
+ })
+server.get('/images/networkNodeView', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'network-node-view1.png'));
+ })
+server.get('/images/presetDisplayView', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'preset_displayview.png'));
+ })
+server.get('/images/simulate', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'simulate-6.png'));
+ })
+server.get('/images/simulateAlarm', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'simulate-alarm-1.png'));
+ })
+server.get('/images/skedExample', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'sked_example1.png'));
+ })
+server.get('/images/sortCamera', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'sort-camera-1.png'));
+ })
+server.get('/images/structureIcons', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'structureicons.png'));
+ })
+server.get('/images/systemSettingsMapping', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'system-settings-mapping.png'));
+ })
+server.get('/images/thumbnailsActivated', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'thumbnails activated.png'));
+ })
+server.get('/images/thumbnailsSelected', (req, res) => {
+  res.sendFile(path.join(__dirname, 'images', 'thumbnails selected.png'));
+ })
+
 server.use(express.text());
 
 server.post('/api/predictions', (req, res) => {
