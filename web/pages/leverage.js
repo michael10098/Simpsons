@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Menu } from "../components/Menu.js"
 
-function ResumePage() {
+function LeveragePage() {
  return (
   <div>
    <Menu/>
@@ -11,4 +11,4 @@ function ResumePage() {
  )
 }
 
-export default ResumePage
+export default LeveragePage
