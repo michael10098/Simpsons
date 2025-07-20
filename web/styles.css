@@ -1,3 +1,6 @@
+@import "css/ComboBox.css";
+@import "css/Menu.css";
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +14,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* these are taken from the css files that define how react-aris works. */
+  --highlight-background: green;
+  --highlight-background-pressed: #522acd;
+  --highlight-background-invalid: #cc2000;
+  --highlight-foreground: white;
+  --highlight-foreground-pressed: #ddd;
+  --highlight-overlay: rgb(from #6f46ed r g b / 15%);
+  --invalid-color: var(--red-400);
+  --invalid-color-pressed: var(--red-500);
 }
 
 a {

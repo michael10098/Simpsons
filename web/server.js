@@ -35,6 +35,10 @@ app.prepare().then(() => {
   return app.render(req, res, '/leverage')
  })
 
+ server.get("/test", (req, res) => {
+  return app.render(req, res, '/test')
+ })
+
  server.get('/images/BartSimpson', (req, res) => {
   res.sendFile(path.join(__dirname, 'images', 'BartSimpson.png'));
  })
