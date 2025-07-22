@@ -8,8 +8,8 @@ services:
       - "3000:3000"
       - "5000:5000"
     volumes:
-     - ./web:/app
-     - ./web/node_modules:/app/node_modules
+     - ./web2:/app
+     - ./web2/node_modules:/app/node_modules
     environment:
       NODE_ENV: development
     stdin_open: true

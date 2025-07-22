@@ -11,17 +11,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./web/requirements.txt ./
+COPY ./web2/requirements.txt ./
 RUN pip install --no-cache-dir --break-system-packages -r requirements.txt
 
 # Copy package.json and package-lock.json
-COPY ./web/package*.json ./
+COPY ./web2/package*.json ./
  
 # Install dependencies
 RUN npm install
 
 # Copy the rest of your application files
-COPY ./web .
+COPY ./web2 .
 
 # Expose the port your app runs on
 EXPOSE 3000
