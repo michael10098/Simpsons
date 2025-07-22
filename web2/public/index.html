@@ -241,6 +241,11 @@ http://www.templatemo.com/tm-467-easy-profile
 					</br>
 	          		<p>Please enter a quote that one of the characters may have said and hit the search button:</p>
 					</br>
+					<input type="button" value="Quote 1" onclick="document.getElementById('predictStringIn').value = 'Oh no, you poor thing.'">
+					<input type="button" value="Quote 2" onclick="document.getElementById('predictStringIn').value = 'After pie.'">
+					<input type="button" value="Quote 3" onclick="document.getElementById('predictStringIn').value = 'Maybe it needs more fertilizer.'">
+					<input type="button" value="Quote 4" onclick="document.getElementById('predictStringIn').value = 'They cut out the best word!'">
+					<input type="button" value="Quote 5" onclick="document.getElementById('predictStringIn').value = 'doo...'">
 			        <textarea rows="5" id="predictStringIn">Where's Lisa?</textarea><br/>
     	      		<input type="submit" id="predictSubmit"></input>
 					</br>
@@ -302,14 +307,13 @@ http://www.templatemo.com/tm-467-easy-profile
 	predictSubmit.onclick = function() {
 		// Code to be executed when the button is clicked
 		console.log('Button clicked using onclick property!')
-		let predictInput = predictStringIn.value
 
 		options = {
     		method: 'POST',
 		    headers: {
        			'Content-Type': 'text/plain',
       		},
-      		body: predictStringIn.textContent
+      		body: predictStringIn.value
 		}
 	    fetch('/api/predictions', options)
     	.then((response) => response.text())
